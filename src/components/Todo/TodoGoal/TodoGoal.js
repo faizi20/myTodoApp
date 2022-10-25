@@ -1,8 +1,12 @@
 import React from 'react'
+import './TodoGoal.css'
 
-function TodoGoal() {
+function TodoGoal(props) {
+  const onDelete = () => {
+    props.onDelete(props.id)
+  }
   return (
-    <div>TodoGoal</div>
+    <li className='goal-item' onClick={onDelete}>{props.children}</li>
   )
 }
 

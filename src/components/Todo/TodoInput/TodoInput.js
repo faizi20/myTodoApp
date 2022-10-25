@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import Button from '../../UI/Button'
 import './TodoInput.css'
 
-function TodoInput() {
+function TodoInput(props) {
     const [enteredValue, setEnteredValue] = useState();
 
     const formSubmitHandler = (events) =>{
         events.preventDefault();
+        props.onAddItem(enteredValue)
     }
 
     const goalInputChangeHandler = (events) =>{

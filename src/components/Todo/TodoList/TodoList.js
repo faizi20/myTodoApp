@@ -4,16 +4,17 @@ import './TodoList.css'
 
 function TodoList(props) {
     return (
-        <div>
+        <ul className='goal-list'>
             {props.items.map((goal) => (
                 <TodoGoal
                     key={goal.id}
                     id={goal.id}
+                    onDelete={props.onDeleteItem}
                 >
                     {goal.text}
                 </TodoGoal>
             ))}
-        </div>
+        </ul>
     )
 }
 
